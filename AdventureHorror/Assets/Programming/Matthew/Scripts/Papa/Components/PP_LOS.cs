@@ -9,7 +9,9 @@ public class PP_LOS
     public Papa papa;
     private GameObject paparef;
     private bool lostSight = true;
-    private int count = 0;
+    private float cD = 0f;
+    private float timer = 4f;
+
 
     //Constructor
     public PP_LOS(PapaData papaData, Papa papa)
@@ -23,6 +25,7 @@ public class PP_LOS
     //Main Method
     public void LineOfSightCheck()
     {
+        Debug.Log(cD);
         //Array of Colliders (within line of sight) only of the layer specified in targetLayer
         Collider[] rangeChecks = Physics.OverlapSphere(papa.agent.transform.position, papaData.radius, papaData.targetLayer);
         //If collider is in the array, find angle from front of Papa, to the player (presumably).
@@ -37,6 +40,7 @@ public class PP_LOS
                 float distanceToTarget = Vector3.Distance(papa.agent.transform.position, target.position);
                 if (!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToTarget, papaData.occlusionLayers))
                 {
+                    cD = timer;
                     papaData.targetLastSeen = target.position;
                     papaData.canSeeTarget = true;
                     papaData.isAgro = true;
@@ -49,24 +53,46 @@ public class PP_LOS
                 {
                     if (!lostSight)
                     {
-                        ++count;
                         papaData.targetLastSeen = papa.pD.player.transform.position;
                         Vector3 distanceToPlayer = papaData.targetLastSeen - papa.gameObject.transform.position;
-                        if (count/1000 > distanceToPlayer.magnitude)
+                        if (cD > 0f)
                         {
-                            count = 0;
-                            lostSight = false;
+                            cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
                         }
                     }
                     else
+                        papaData.canSeeTarget = false;
+                }
+            }
+            else
+            {
+                if (!lostSight)
+                {
+                    papaData.targetLastSeen = papa.pD.player.transform.position;
+                    Vector3 distanceToPlayer = papaData.targetLastSeen - papa.gameObject.transform.position;
+                    if (cD > 0f)
+                    {
+                        cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
+                    }
+                }
+                else
                     papaData.canSeeTarget = false;
+            }
+        }
+        else if (papaData.canSeeTarget)
+        {
+            if (!lostSight)
+            {
+                papaData.targetLastSeen = papa.pD.player.transform.position;
+                Vector3 distanceToPlayer = papaData.targetLastSeen - papa.gameObject.transform.position;
+                if (cD > 0f)
+                {
+                    cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
                 }
             }
             else
                 papaData.canSeeTarget = false;
         }
-        else if (papaData.canSeeTarget)
-            papaData.canSeeTarget = false;
     }
 
 }
