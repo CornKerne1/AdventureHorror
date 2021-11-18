@@ -33,7 +33,12 @@ public class Door : MonoBehaviour
 
 
         //}
-        //else StartCoroutine(wait());
+        //else StartCoroutine(dontStayOpen());
+    }
+
+    IEnumerator dontStayOpen()
+    {
+        yield return new WaitForSeconds(2f);
     }
     private void Start()
     {
@@ -142,6 +147,7 @@ public class Door : MonoBehaviour
         {
             Close();
         }
+       
 
     }
 
