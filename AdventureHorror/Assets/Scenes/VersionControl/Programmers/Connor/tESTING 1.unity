@@ -123,3 +123,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 2802d90188ef9c54193cab40d0b933dc, type: 2}
+--- !u!1001 &1431375329
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 68.4933
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 308.74625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 318.12802
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617510391556665693, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960874561544629770, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
+      propertyPath: m_Name
+      value: Connor'sDemoScene (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72df47f15b23afa49ab251fe68e7a238, type: 3}
