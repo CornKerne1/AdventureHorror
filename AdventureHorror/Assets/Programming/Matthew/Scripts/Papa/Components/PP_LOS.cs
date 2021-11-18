@@ -52,7 +52,7 @@ public class PP_LOS
                         ++count;
                         papaData.targetLastSeen = papa.pD.player.transform.position;
                         Vector3 distanceToPlayer = papaData.targetLastSeen - papa.gameObject.transform.position;
-                        if (count/500 > distanceToPlayer.magnitude)
+                        if (count/1000 > distanceToPlayer.magnitude)
                         {
                             count = 0;
                             lostSight = false;
