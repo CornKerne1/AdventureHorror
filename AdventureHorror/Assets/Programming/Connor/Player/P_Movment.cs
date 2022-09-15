@@ -78,7 +78,7 @@ public class P_Movment
         }
         else
         {
-            horizontalDeceleration = 0;
+            verticalDeceleration = 0;
         }
         Vector3 move = PD.player.transform.right * horizontal1D *  horizontalAcceleration + PD.player.transform.forward * vertical1D * verticalAcceleration;
 
